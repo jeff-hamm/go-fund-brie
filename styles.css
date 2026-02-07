@@ -1,0 +1,307 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+    /* Colors from SVG */
+    --orange: #cc4d06;
+    --gold: #d89a0f;
+    --dark-teal: #1d4d4d;
+    --teal: #30b0ad;
+    --white: #ffffff;
+    --black: #000000;
+    --border-radius: 10px;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* 
+ * Main Container 
+ * SVG viewBox: 612 x 792
+ */
+.flyer-container {
+    width: 100%;
+    max-width: 612px;
+    background-color: var(--white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 612 / 792;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 
+ * Header Banner 
+ * SVG: x=28, y=11, w=555, h=210
+ */
+.header-banner {
+    position: absolute;
+    left: 4.58%;
+    top: 1.39%;
+    width: 90.69%;
+    height: 26.52%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.header-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Header text overlay */
+.header-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 6%;
+    color: #004364;
+}
+
+.header-title {
+    font-size: clamp(0.8rem, 3.5vw, 1.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.3em;
+}
+
+.header-text-line {
+    font-size: clamp(0.4rem, 1.4vw, 0.7rem);
+    line-height: 1.4;
+    margin-bottom: 0.2em;
+}
+
+.header-bold {
+    font-weight: 700;
+}
+
+/* Base Box Styles */
+.box {
+    position: absolute;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+/* Box content (text) */
+.box-content {
+    padding: 6% 7%;
+    color: var(--white);
+}
+
+/* Gold box text is black */
+.gold-content {
+    color: var(--black);
+}
+
+.box-title {
+    font-weight: 800;
+    margin-bottom: 0.4em;
+    font-size: clamp(0.7rem, 2.2vw, 1.1rem);
+    line-height: 1.2;
+}
+
+.box-text {
+    font-size: clamp(0.5rem, 1.5vw, 0.75rem);
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+}
+
+.box-text-small {
+    font-size: clamp(0.45rem, 1.3vw, 0.65rem);
+    line-height: 1.4;
+}
+
+.box-text-bold {
+    font-weight: 700;
+}
+
+/* 
+ * Gold Box
+ * SVG: x=26, y=232, w=339, h=261
+ */
+.box-gold {
+    background-color: var(--gold);
+    left: 4.25%;
+    top: 29.29%;
+    width: 55.39%;
+    height: 32.95%;
+}
+
+/* 
+ * Dark Teal Box
+ * SVG: x=373, y=232, w=209, h=261
+ */
+.box-dark-teal {
+    background-color: var(--dark-teal);
+    left: 60.95%;
+    top: 29.29%;
+    width: 34.15%;
+    height: 32.95%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+ * Photo frame inside dark teal box (image on TOP)
+ * SVG: photo clip at (416.5, 248.75) → 122.4x122.4 rounded square
+ * Centered horizontally, at top of box
+ */
+.photo-frame {
+    position: relative;
+    margin: 5% auto 0 auto;
+    width: 58%;
+    aspect-ratio: 1 / 1;
+    border-radius: 13px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark teal text content below photo */
+.dark-teal-content {
+    padding: 4% 6% 5% 6%;
+    color: var(--white);
+}
+
+/* 
+ * Orange Box
+ * SVG: x=26, y=504, w=209, h=279
+ */
+.box-orange {
+    background-color: var(--orange);
+    left: 4.25%;
+    top: 63.64%;
+    width: 34.15%;
+    height: 35.23%;
+}
+
+.orange-title {
+    font-size: clamp(0.8rem, 2.5vw, 1.3rem) !important;
+}
+
+/* 
+ * Venmo QR code in the orange box
+ * SVG: Teal (#30b0ad) rounded rect at (72, 644) → 117x123
+ * QR image inset ~5px inside the teal container
+ * Relative to orange box (26, 504): left=46, top=140
+ * Percentages: left=22%, top=50.2%, w=56%, h=44.1%
+ */
+.venmo-qr {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50.2%;
+    width: 56%;
+    height: 44.1%;
+    background-color: var(--teal);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.venmo-qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+}
+
+/* 
+ * Teal Box
+ * SVG: x=243, y=504, w=339, h=279
+ */
+.box-teal {
+    background-color: var(--teal);
+    left: 39.71%;
+    top: 63.64%;
+    width: 55.39%;
+    height: 35.23%;
+}
+
+/* 
+ * Bottom photos in teal box
+ * SVG clip regions (absolute → relative to teal box 243, 504):
+ *   image2 (left):   26.5, 164 → 76.5×102  (7.8%, 58.8%, 22.6%, 36.6%)
+ *   image4 (middle): 112.7, 164 → 113.3×102 (33.2%, 58.8%, 33.4%, 36.6%)
+ *   image3 (right):  236, 163.6 → 77.3×102  (69.6%, 58.6%, 22.8%, 36.6%)
+ * Photos span: left=7.8% to right=92.4%, with ~3% gaps
+ */
+.bottom-photos {
+    position: absolute;
+    left: 7.8%;
+    bottom: 4.8%;
+    width: 84.7%;
+    height: 36.6%;
+    display: flex;
+    align-items: stretch;
+    gap: 2.8%;
+}
+
+.bottom-photo {
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Proportional widths: 76.5 : 113.3 : 77.3 */
+.photo-narrow {
+    flex: 77;
+}
+
+.photo-wide {
+    flex: 113;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+    
+    :root {
+        --border-radius: 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        padding: 5px;
+    }
+    
+    :root {
+        --border-radius: 6px;
+    }
+}
