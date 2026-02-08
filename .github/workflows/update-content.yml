@@ -1,0 +1,43 @@
+name: Update Website Content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content.md'
+      - 'index.template.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Generate index.html
+        run: python scripts/update-content.py
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code index.html || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html
+          git commit -m "Auto-update index.html from content.md"
+          git push
