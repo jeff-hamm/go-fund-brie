@@ -59,10 +59,14 @@ body {
     height: 26.52%;
     border-radius: var(--border-radius);
     overflow: hidden;
+    background-color: #d9d9d9;
 }
 
-.header-banner img {
-    width: 100%;
+.header-cat-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 28%;
     height: 100%;
     object-fit: cover;
 }
@@ -261,6 +265,12 @@ body {
     justify-content: center;
 }
 
+.venmo-qr a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .venmo-qr img {
     width: 100%;
     height: 100%;
@@ -335,6 +345,176 @@ body {
     :root {
         --border-radius: 8px;
     }
+    
+    /* Switch to vertical flow layout on small screens */
+    .flyer-container {
+        aspect-ratio: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* Reset all absolute positioning */
+    .header-banner,
+    .box {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Header banner */
+    .header-banner {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .header-cat-image {
+        position: relative !important;
+        right: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        order: -1;
+        z-index: 0;
+        object-fit: contain;
+        object-position: top;
+    }
+    
+    .header-text {
+        position: relative !important;
+        z-index: 1;
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .header-title {
+        font-size: clamp(1rem, 4vw, 1.6rem);
+        text-align: center;
+    }
+    
+    .header-text-line {
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+        line-height: 1.5;
+        margin-bottom: 0.4em;
+    }
+    
+    /* All boxes get consistent padding and auto height */
+    .box-content {
+        padding: 6% 5%;
+    }
+    
+    .gold-content {
+        padding: 6% 5%;
+    }
+    
+    .box-title {
+        font-size: clamp(1rem, 3.5vw, 1.4rem);
+        margin-bottom: 0.5em;
+    }
+    
+    .box-text {
+        font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+        line-height: 1.5;
+        margin-bottom: 0.5em;
+    }
+    
+    .box-text-small {
+        font-size: clamp(0.8rem, 2.3vw, 1rem);
+        line-height: 1.4;
+        margin-bottom: 0.4em;
+    }
+    
+    /* Dark teal box - stack photo and content */
+    .box-dark-teal {
+        padding: 20px;
+    }
+    
+    .photo-frame {
+        width: 70%;
+        max-width: 200px;
+        margin: 0 auto 20px auto;
+    }
+    
+    .dark-teal-content {
+        padding: 0;
+    }
+    
+    .dark-teal-content .box-title {
+        font-size: clamp(1rem, 3.5vw, 1.4rem);
+    }
+    
+    .dark-teal-content .box-text-small {
+        font-size: clamp(0.8rem, 2.3vw, 1rem);
+    }
+    
+    /* Orange box - stack content and QR */
+    .box-orange {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .box-orange .box-content {
+        max-height: none;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .box-orange .box-text {
+        font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+        line-height: 1.5;
+    }
+    
+    .orange-title {
+        font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
+    }
+    
+    .venmo-qr {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 200px !important;
+        height: 200px !important;
+        padding: 10px;
+    }
+    
+    /* Teal box - stack content and photos */
+    .box-teal {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .box-teal .box-content {
+        max-height: none;
+        padding: 0;
+    }
+    
+    .bottom-photos {
+        position: relative !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        gap: 10px;
+    }
+    
+    .bottom-photo {
+        height: 120px;
+        border-radius: 8px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -344,5 +524,24 @@ body {
     
     :root {
         --border-radius: 6px;
+    }
+    
+    .flyer-container {
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .header-banner {
+        min-height: 150px;
+    }
+    
+    .box-dark-teal,
+    .box-orange,
+    .box-teal {
+        padding: 15px;
+    }
+    
+    .bottom-photo {
+        height: 100px;
     }
 }
