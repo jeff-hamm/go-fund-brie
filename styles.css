@@ -72,30 +72,32 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 65%;
+    width: 72%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5% 6%;
+    padding: 2% 4%;
     color: #004364;
 }
 
 .header-title {
-    font-size: clamp(0.8rem, 3.5vw, 1.8rem);
+    font-size: clamp(0.6rem, 2.8vw, 1.4rem);
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.25em;
+    text-align: center;
 }
 
 .header-text-line {
-    font-size: clamp(0.4rem, 1.4vw, 0.7rem);
-    line-height: 1.4;
-    margin-bottom: 0.2em;
+    font-size: clamp(0.45rem, 1.6vw, 0.8rem);
+    line-height: 1.25;
+    margin-bottom: 0.05em;
 }
 
 .header-bold {
     font-weight: 700;
+    margin-top: 0.15em;
 }
 
 /* Base Box Styles */
@@ -107,32 +109,34 @@ body {
 
 /* Box content (text) */
 .box-content {
-    padding: 6% 7%;
+    padding: 4% 5%;
     color: var(--white);
 }
 
 /* Gold box text is black */
 .gold-content {
     color: var(--black);
+    padding: 3% 4%;
 }
 
 .box-title {
     font-weight: 800;
-    margin-bottom: 0.4em;
-    font-size: clamp(0.7rem, 2.2vw, 1.1rem);
+    margin-bottom: 0.3em;
+    font-size: clamp(0.65rem, 2vw, 1rem);
     line-height: 1.2;
 }
 
 .box-text {
-    font-size: clamp(0.5rem, 1.5vw, 0.75rem);
-    line-height: 1.5;
-    margin-bottom: 0.5em;
+    font-size: clamp(0.4rem, 1.3vw, 0.65rem);
+    line-height: 1.35;
+    margin-bottom: 0.15em;
     font-weight: 400;
 }
 
 .box-text-small {
-    font-size: clamp(0.45rem, 1.3vw, 0.65rem);
-    line-height: 1.4;
+    font-size: clamp(0.38rem, 1.1vw, 0.55rem);
+    line-height: 1.3;
+    margin-bottom: 0.1em;
 }
 
 .box-text-bold {
@@ -172,8 +176,8 @@ body {
  */
 .photo-frame {
     position: relative;
-    margin: 5% auto 0 auto;
-    width: 58%;
+    margin: 4% auto 0 auto;
+    width: 55%;
     aspect-ratio: 1 / 1;
     border-radius: 13px;
     overflow: hidden;
@@ -188,8 +192,20 @@ body {
 
 /* Dark teal text content below photo */
 .dark-teal-content {
-    padding: 4% 6% 5% 6%;
+    padding: 3% 5% 4% 5%;
     color: var(--white);
+    overflow: hidden;
+}
+
+.dark-teal-content .box-title {
+    font-size: clamp(0.5rem, 1.6vw, 0.8rem);
+    margin-bottom: 0.2em;
+}
+
+.dark-teal-content .box-text-small {
+    font-size: clamp(0.35rem, 1vw, 0.5rem);
+    line-height: 1.25;
+    margin-bottom: 0.05em;
 }
 
 /* 
@@ -204,8 +220,22 @@ body {
     height: 35.23%;
 }
 
+.box-orange .box-content {
+    padding: 3% 5%;
+    max-height: 48%;
+    overflow: hidden;
+}
+
+.box-orange .box-text {
+    font-size: clamp(0.38rem, 1.1vw, 0.55rem);
+    line-height: 1.3;
+    margin-bottom: 0.1em;
+}
+
 .orange-title {
-    font-size: clamp(0.8rem, 2.5vw, 1.3rem) !important;
+    font-size: clamp(0.7rem, 2.2vw, 1.1rem) !important;
+    text-align: center;
+    margin-bottom: 0.2em;
 }
 
 /* 
@@ -249,6 +279,17 @@ body {
     top: 63.64%;
     width: 55.39%;
     height: 35.23%;
+}
+
+.box-teal .box-content {
+    padding: 3% 4%;
+    max-height: 55%;
+    overflow: hidden;
+}
+
+.box-teal .box-title {
+    text-align: center;
+    margin-bottom: 0.3em;
 }
 
 /* 
