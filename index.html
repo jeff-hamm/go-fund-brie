@@ -6,64 +6,43 @@
     <title>Help Zelda - Fundraising Campaign</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow: hidden;
         }
         
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-        
-        .svg-container {
-            position: relative;
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .svg-container object {
-            max-width: 100%;
-            height: auto;
+        img {
+            width: 100vw;
+            height: 100vh;
             display: block;
         }
         
+        /* Container for SVG and overlay */
+        .fullscreen-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
         /* Clickable overlay for Venmo QR code */
-        /* The orange box is positioned at x=26, y=504, w=209, h=279 */
-        /* SVG viewBox is 0 0 612 791.999994, intrinsic dimensions width=816, height=1056 */
-        /* QR code is in the lower portion of the orange box */
+        /* SVG viewBox is 0 0 612 791.999994 */
+        /* Orange box with QR code is at approximately x=26, y=504, w=209, h=279 */
+        /* QR code is in the lower portion of the orange box, around y=650-770 */
         .venmo-overlay {
             position: absolute;
-            /* Approximate position based on orange box location */
-            /* x: 26/612 = 4.25%, y: 650/792 = 82%, w: 209/612 = 34%, h: 120/792 = 15% */
+            /* Position based on viewBox coordinates: x: 26/612 = 4.25%, y: 650/792 = 82%, w: 209/612 = 34%, h: 120/792 = 15% */
             left: 4.25%;
             top: 82%;
             width: 34%;
             height: 15%;
             cursor: pointer;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="svg-container">
-        <object data="sources/Zelda%20Fundraising%20Flyer.svg" type="image/svg+xml" aria-label="Zelda Fundraising Flyer">
-            <!-- Fallback for browsers that don't support object tag -->
-            <img src="sources/Zelda%20Fundraising%20Flyer.svg" alt="Zelda Fundraising Flyer">
-        </object>
+    <div class="fullscreen-container">
+        <img src="sources/Zelda%20Fundraising%20Flyer.svg" alt="Zelda Fundraising Flyer">
         <a href="https://venmo.com/u/briana-cushing" target="_blank" rel="noopener noreferrer" class="venmo-overlay" aria-label="Donate via Venmo"></a>
     </div>
 </body>
