@@ -68,7 +68,8 @@ body {
     top: 0;
     width: 28%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: right center;
 }
 
 /* Header text overlay */
@@ -388,8 +389,8 @@ body {
         max-height: 250px !important;
         order: -1;
         z-index: 0;
-        object-fit: contain;
-        object-position: top;
+        object-fit: contain !important;
+        object-position: top !important;
     }
     
     .header-text {
