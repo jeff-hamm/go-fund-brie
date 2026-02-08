@@ -365,6 +365,15 @@ body {
         height: auto !important;
     }
     
+    /* Reorder boxes on mobile: header, gold, dark-teal, teal, orange */
+    .box-orange {
+        order: 5;
+    }
+    
+    .box-teal {
+        order: 4;
+    }
+    
     /* Header banner */
     .header-banner {
         min-height: 200px;
@@ -376,8 +385,7 @@ body {
         position: relative !important;
         right: auto !important;
         width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
+        max-height: 250px !important;
         order: -1;
         z-index: 0;
         object-fit: contain;
